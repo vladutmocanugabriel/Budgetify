@@ -17,6 +17,9 @@ class BudgetCategory(Base):
 
     expenses = relationship("Expense", back_populates="budget_category")
 
+    user_id = Column(Integer, ForeignKey("users_model.id"))
+    user = relationship("User", back_populates="budgets")
+
 class Expense(Base):
     __tablename__ = "expense_model"
 
@@ -28,3 +31,15 @@ class Expense(Base):
     budget_category_id = Column(Integer, ForeignKey("budget_model.id"), nullable=False)
     budget_category = relationship("BudgetCategory", back_populates="expenses")
 
+    user_id = Column(Integer, ForeignKey("users_model.id"))
+    user = relationship("User", back_populates="budgets")
+
+class User(Base):
+    __tablename__ = "users_model"
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True, nullable=False)
+    hashed_password = Column(String, nullable=False)
+
+    budgets = relationship("BudgetCategory", back_populates="user")
+    expenses = relationship("Expense", back_populates="user")
