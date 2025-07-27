@@ -1,0 +1,13 @@
+from enum import Enum
+
+class ExpenseType(Enum):
+    FOOD = "FOOD"
+    CAR_GAS = "CAR_GAS"
+    CIGGARETES = "CIGGARETES"
+    SUBSCRIPTIONS = "SUBSCRIPTIONS"
+    CLOTHES = "CLOTHES"
+    TAKE_OUT = "TAKE_OUT"
+    GOING_OUT = "GOING_OUT"
+    SPORT = "SPORT"
+    GIFTS = "GIFTS"
+    MISSCELANEOUS = "MISSCELANEOUS"

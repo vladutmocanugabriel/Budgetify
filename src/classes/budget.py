@@ -36,8 +36,8 @@ class BudgetCategory:
         return self.over_budget
     
     #UPDATE and CALCULATE Budget
-    def add_expense(self, name, amount):
-        expense = Expense(name, amount)
+    def add_expense(self, name, amount, type):
+        expense = Expense(name, amount, type)
         self.total_spent += expense.amount
         self.add_to_expenses_list(expense)
     
@@ -48,11 +48,10 @@ class BudgetCategory:
     def get_total_spent(self):
         return self.total_spent
     
+    #?????
     def add_funds(self, amount):
-        self.starting_total += amount
-        return self.starting_total
+        self.re -= amount
+        return self.total_spent
 
-
-    
 
         
