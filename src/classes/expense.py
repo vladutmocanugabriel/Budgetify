@@ -1,4 +1,4 @@
-from expense_type import ExpenseType
+from classes.expense_type import ExpenseType
 
 class Expense:
     def __init__(self, name, amount, expense_type: ExpenseType):

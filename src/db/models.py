@@ -12,6 +12,7 @@ class BudgetCategory(Base):
     starting_total = Column(Float, nullable=False)
     limit = Column(Float, default=0)
     total_spent = Column(Float, default=0)
+    remaining_budget = Column(Float, default=0)
     over_budget = Column(Boolean, default=False)
 
     expenses = relationship("Expense", back_populates="budget_category")

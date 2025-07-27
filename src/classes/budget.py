@@ -1,4 +1,4 @@
-from expense import *
+from classes.expense import Expense
 
 class BudgetCategory:
     def __init__(self, name, starting_total):
@@ -6,6 +6,7 @@ class BudgetCategory:
         self.starting_total = starting_total
         self.limit = 0
         self.total_spent = 0
+        self.remaining_budget = 0
         self.over_budget = False
         self.expenses = []
 
@@ -18,7 +19,8 @@ class BudgetCategory:
         return self.limit
 
     def get_remaining(self):
-        return self.starting_total - self.total_spent
+        self.remaining_budget =  self.starting_total - self.total_spent
+        return self.remaining_budget
     
     def add_to_expenses_list(self, expense):
         return self.expenses.append(expense)
@@ -39,6 +41,7 @@ class BudgetCategory:
     def add_expense(self, name, amount, type):
         expense = Expense(name, amount, type)
         self.total_spent += expense.amount
+        self.remaining_budget = self.get_remaining()
         self.add_to_expenses_list(expense)
     
     def remove_expense(self, expense):

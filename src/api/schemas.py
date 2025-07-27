@@ -11,9 +11,13 @@ class BudgetOut(BaseModel):
 
     limit: float
     total_spent: float
+    remaining_budget: float
     over_budget: bool
     class Config:
         orm_mode = True
+
+class BudgetLimitUpdate(BaseModel):
+    limit: float
 
 class ExpenseCreate(BaseModel):
     name: str
