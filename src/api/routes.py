@@ -38,8 +38,8 @@ def home(request: Request, db: Session = Depends(get_db)):
 def create_budget_form(
     name: str = Form(...),
     starting_total: float = Form(...),
-    db: Session = Depends(get_db)
 ):
+    db: Session = Depends(get_db)
     budget = BudgetCreate(name=name, starting_total=starting_total)
     create_budget(budget, db)
     return RedirectResponse(url="/", status_code=303)
