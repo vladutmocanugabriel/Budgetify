@@ -3,8 +3,8 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from db.database import SessionLocal
 from auth.helpers import *
-from db.models import BudgetCategory, Expense, User
-from api.schemas import BudgetCreate, BudgetOut, ExpenseCreate, ExpenseOut, BudgetLimitUpdate, UserCreate, UserOut
+from db.models import BudgetCategory, Expense
+from api.schemas import BudgetCreate, BudgetOut, ExpenseCreate, ExpenseOut, BudgetLimitUpdate
 from fastapi import HTTPException
 from classes.budget import BudgetCategory as BudgetLogic
 from classes.expense import Expense as ExpenseLogic
@@ -74,18 +74,18 @@ def set_budget_limit_from_form(
 
 #################  USERS  ###########################################################################
 
-@router.post("/register", response_model=UserOut)
-def register_user(user: UserCreate, db: Session = Depends(get_db)):
-    existing_user = db.query(User).filter(User.username == user.username).first()
-    if existing_user:
-        raise HTTPException(status_code=400, detail="Username already registered")
+#@router.post("/register", response_model=UserOut)
+#def register_user(user: UserCreate, db: Session = Depends(get_db)):
+    #existing_user = db.query(User).filter(User.username == user.username).first()
+    #if existing_user:
+        #raise HTTPException(status_code=400, detail="Username already registered")
     
-    hashed_pw = hash_password(user.password)
-    new_user = User(username=user.username, hashed_password=hashed_pw)
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
-    return new_user
+    #hashed_pw = hash_password(user.password)
+    #new_user = User(username=user.username, hashed_password=hashed_pw)
+    #db.add(new_user)
+    #db.commit()
+    #db.refresh(new_user)
+    #return new_user
 
 #################  BUDGETS  ###########################################################################
 
