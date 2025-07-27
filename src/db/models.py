@@ -22,7 +22,7 @@ class Expense(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, nullable=False)
     amount = Column(Float, nullable=False)
-    type = Column(SQLAEnum(ExpenseType), nullable=False)
+    expense_type = Column(SQLAEnum(ExpenseType), nullable=False)
     
     budget_category_id = Column(Integer, ForeignKey("budget_model.id"), nullable=False)
     budget_category = relationship("BudgetCategory", back_populates="expenses")
