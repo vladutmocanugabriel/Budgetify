@@ -1,1 +1,5 @@
 venv
+src/classes/__pycache__
+src/db/__pycache__
+*.db
+src/db/test_insert.py
