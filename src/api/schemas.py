@@ -33,8 +33,8 @@ class ExpenseOut(BaseModel):
         orm_mode = True
 
 #class UserCreate(BaseModel):
-    username: str
-    password: str
+    #username: str
+    #password: str
 
 #class UserOut(BaseModel):
     #id: int
