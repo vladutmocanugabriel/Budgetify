@@ -1,4 +1,4 @@
-# 💰 Budget Tracker App
+# Budget Tracker App
 
 This is a **simple (and IN PROGRESS) web-based Budget Tracking App** built with **FastAPI**, **Jinja2**, **SQLite**.
 
@@ -6,17 +6,17 @@ This is a **simple (and IN PROGRESS) web-based Budget Tracking App** built with 
 
 ---
 
-## ✨ Features
+## Features
 
-- 📊 Create budgets with starting amounts
-- 🚨 Set spending limits
-- ✍️ Add expenses per budget
-- 🧮 Automatic calculation of remaining budget
-- ✅ Visual indicator for over/under budget
+- Create budgets with starting amounts
+-  Set spending limits
+-  Add expenses per budget
+-  Automatic calculation of remaining budget
+-  Visual indicator for over/under budget
 
 ---
 
-## 🚀 Getting Started Locally
+##  Getting Started Locally
 
 ### Prerequisites
 
@@ -61,7 +61,7 @@ Visit `http://localhost:8000` to use the app.
 
 ---
 
-## 🧾 Folder Structure
+## Folder Structure
 
 ```
 src/
