@@ -3,6 +3,7 @@
 This is a **simple (and IN PROGRESS) web-based Budget Tracking App** built with **FastAPI**, **Jinja2**, **SQLite**.
 
 🔗 **Live App**: [https://budgetify-sw76.onrender.com/](https://budgetify-sw76.onrender.com/)  
+🔗 **API DOCS**: [https://budgetify-sw76.onrender.com/docs](https://budgetify-sw76.onrender.com/docs)    
 
 ---
 
